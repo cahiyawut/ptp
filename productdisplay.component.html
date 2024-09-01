@@ -1,0 +1,67 @@
+<form [formGroup]="productProfileForm" (ngSubmit)="updateProduct()">
+    <div>
+      <label for="c1">รหัสสินค้า:</label>
+      <input id="c1" formControlName="c1">
+    </div>
+    <div>
+      <label for="c2">ชื่อสินค้า:</label>
+      <input id="c2" formControlName="c2">
+    </div>
+    <div>
+      <label for="c3">ภาพ:</label>
+      <input id="c3" formControlName="c3">
+    </div>
+    <div>
+      <label for="c4">หมวด:</label>
+      <input id="c4" formControlName="c4">
+    </div>
+    <div>
+      <label for="c5">ราคาขาย:</label>
+      <input id="c5" formControlName="c5">
+    </div>
+    <div>
+      <label for="c6">ราคาต้นทุน:</label>
+      <input id="c6" formControlName="c6">
+    </div>
+    <div>
+      <label for="c7">....:</label>
+      <input id="c7" formControlName="c7">
+    </div>
+    <div>
+      <label for="c8">....:</label>
+      <input id="c8" formControlName="c8">
+    </div>
+    <div>
+      <label for="c9">....:</label>
+      <input id="c9" formControlName="c9">
+    </div>
+    <button type="submit" [disabled]="productProfileForm.invalid">Update Product</button>
+    <br>
+    <br>
+    <br>
+
+        <button type="button"(click)='getProducts2()'>loadProduct</button>
+  </form>
+  
+  <table>
+    <thead>
+    <tr>
+        <th>productCode</th><th>productName</th><th>productLine</th><th>productScale</th><th>productVendor</th><th>country</th><th>productDescription</th><th>quantityInStock</th><th>buyPrice</th><th>MSRP</th>
+    </tr>
+  </thead>
+    <tbody>
+    @for (x of products$; track x.productCode) {
+        <tr>
+        <td>{{ x.productCode }}</td>
+        <td>{{ x.productName }}</td>
+        <td>{{ x.productLine}}</td>
+        <td>{{ x.productScale }}</td>
+        <td>{{ x.productVendor }}</td>
+        <td>{{ x.productDescription}}</td>
+        <td>{{ x.quantityInStock }}</td>
+        <td>{{ x.buyPrice }}</td>
+        <td>{{ x.MSRP}}</td>                
+        </tr>
+    }
+    </tbody>
+  </table>
