@@ -1,0 +1,15 @@
+<div class="delete-container">
+    <h2>Delete Item</h2>
+    <form (ngSubmit)="deleteItem()">
+      <label for="cordId">Enter ID to Delete:</label>
+      <input 
+        id="cordId" 
+        name="cordId" 
+        [(ngModel)]="CordID" 
+        type="text" 
+        required 
+        placeholder="Enter ID" />
+      <button type="submit" class="boton-elegante">Delete</button>
+    </form>
+  </div>
+  
